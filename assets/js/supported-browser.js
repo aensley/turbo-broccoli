@@ -1,4 +1,4 @@
-/* global $, Octokit, tocbot, ClipboardJS, VERSIONS, PAGE_URL, PAGE_NAME, API_TOKEN, REPOSITORY */
+/* global $, Octokit, tocbot, ClipboardJS, VERSIONS, PAGE_URL, PAGE_NAME, API_ENDPOINT, API_TOKEN, REPOSITORY */
 
 // Remove the file extension.
 const DOT_POSITION = PAGE_NAME.lastIndexOf('.')
@@ -24,8 +24,8 @@ const YOUTUBE_REGEX = /^.*((m\.)?youtu\.be\/|vi?\/|u\/\w\/|embed\/|\?vi?=|&vi?=)
  */
 function initRest () {
   octokit = new Octokit({
-    auth: window.API_TOKEN,
-    baseUrl: window.API_ENDPOINT
+    auth: API_TOKEN,
+    baseUrl: API_ENDPOINT
   })
   octokit.hook.before('request', async (options) => {
     // Tell GitHub we want text-match data.
@@ -80,7 +80,7 @@ function searchGitHubCode (searchString, callback) {
 
   !octokit && initRest() // Initialize the REST client if it isn't already.
   octokit.search.code({
-    q: 'repo:' + window.REPOSITORY + '+in:file+extension:md+' +
+    q: 'repo:' + REPOSITORY + '+in:file+extension:md+' +
       // "For application/x-www-form-urlencoded, spaces are to be replaced by '+', so one may wish to follow
       // a encodeURIComponent replacement with an additional replacement of '%20' with '+'."
       // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent
@@ -454,32 +454,6 @@ function absoluteUrl (href) {
  * Initializes DataTables.
  */
 function initDataTables () {
-  // Custom order handling for Skill Level column on the training table.
-  $.fn.dataTable.ext.type.order['skill-level-pre'] = function (d) {
-    switch (d) {
-      case 'Beginner': return 1
-      case 'Intermediate': return 2
-      case 'Advanced': return 3
-    }
-
-    return 0
-  }
-
-  // Custom renderer for Standard tool column on the tools inventory table.
-  $.fn.dataTable.render.standardTool = function (data, type, row, meta) {
-    if (type === 'display') {
-      return (data === 'x' ? '<span class="fa-stack"><i class="fas fa-certificate fa-stack-2x"></i><i class="fas fa-check fa-stack-1x fa-inverse"></i></span>' : data)
-    }
-
-    // Search, order and type can use the original data
-    return data
-  }
-
-  // Custom order handling for Standard column on the tools inventory table.
-  $.fn.dataTable.ext.type.order['standard-tool-pre'] = function (data) {
-    return (data === 'x' ? 0 : 1)
-  }
-
   $(DATATABLE_SELECTOR).each(function () {
     let $this = $(this)
     let options = {
@@ -507,13 +481,6 @@ function initDataTables () {
         }
       }
     } catch (e) { console.error(e) }
-
-    // Custom renderer for standard tool column on tools inventory.
-    for (let i = 0; i < options.columnDefs.length; i++) {
-      if (options.columnDefs[i].type === 'standard-tool') {
-        options.columnDefs[i].render = $.fn.dataTable.render.standardTool
-      }
-    }
 
     $this.DataTable(options)
   })
@@ -625,7 +592,7 @@ $(function () {
 
   initYouTubeVideo()
 
-  if (API_TOKEN.length && REPOSITORY.length) {
+  if (API_ENDPOINT.length && API_TOKEN.length && REPOSITORY.length) {
     $.getMultiScripts(
       [
         'https://cdnjs.cloudflare.com/ajax/libs/rest.js/' + VERSIONS.octokitrest + '/octokit-rest.min.js',
@@ -637,7 +604,7 @@ $(function () {
     })
   }
 
-  if ($(DATATABLE_SELECTOR).length) {
+  if ($content.find(DATATABLE_SELECTOR).length) {
     // TODO: Refactor to load CSS/JS simultaneously.
     $.cachedExtCss('https://cdn.datatables.net/v/' + VERSIONS.datatables + '/datatables.min.css').done(function () {
       $.getMultiScripts(
