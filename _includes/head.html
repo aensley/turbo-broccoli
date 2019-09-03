@@ -1,0 +1,27 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  {%- include seo.html -%}
+  <!--
+    Bootswatch
+    Choose from Themes here: https://www.bootstrapcdn.com/bootswatch/
+  -->
+  <link id="bootswatchTheme" rel="stylesheet" crossorigin="anonymous"
+    href="https://stackpath.bootstrapcdn.com/bootswatch/{{ site.versions.bootstrap }}/{{ site.bootswatch_theme }}/bootstrap.min.css">
+  <link id="customStyles" rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}?{{site.time | date: '%s%N'}}">
+  {%- if site.logo_image -%}
+    {%- include favicon.html -%}
+  {%- endif -%}
+  <!-- Font Awesome -->
+  <script defer crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@{{ site.versions.fontawesome }}/js/all.min.js"></script>
+  <script>
+    const BUILD_NUMBER="{{site.time | date: '%s%N'}}";
+    const VERSIONS=JSON.parse(decodeURIComponent('{{ site.versions | jsonify }}'));
+    const API_ENDPOINT='{{ site.api_endpoint }}';
+    const API_TOKEN='{{ site.api_token }}';
+    const REPOSITORY='{{ site.github.repository_name }}';
+    const PAGE_NAME='{{ page.name }}';
+    const PAGE_URL='{{ page.url }}';
+  </script>
+</head>

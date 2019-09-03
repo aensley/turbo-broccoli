@@ -1,0 +1,15 @@
+<footer class="footer mt-auto py-3 bg-light d-print-none border-top">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 col-md-5 col-lg-4 col-xl-3">
+        <h4 class="footer-heading">{{ site.title | escape }}</h4>
+        <p>{{ site.description | markdownify }}</p>
+      </div>
+      <div class="col-sm-6 col-md-7 col-lg-8 col-xl-9">
+        {{ site.footer | markdownify }}
+      </div>
+    </div>
+  </div>
+</footer>
+
+{%- include footer_scripts.html -%}

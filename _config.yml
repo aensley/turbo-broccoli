@@ -1,0 +1,81 @@
+# ============================= Start Configuring ==============================
+title: Turbo Broccoli
+author: aensley
+description: > # the ">" means to ignore newlines until "footer:"
+  A Jekyll theme for GitHub Pages sites. It's fast, and it's good for you.
+footer: >
+  Footer goes here.
+show_excerpts: false # set to true to show excerpts on the homepage
+
+menus:
+ - Features
+
+# Specify custom links displayed on the right side of the header bar next to Search.
+header_links:
+  - text: Issues
+    link: https://github.com/aensley/turbo-broccoli/issues/
+    icon: fas fa-tasks
+  - text: Donate
+    link: https://andrewensley.com/donate/
+    icon: fas fa-donate
+
+# Bootswatch Theme
+# Available options: https://www.bootstrapcdn.com/bootswatch/
+bootswatch_theme: materia
+
+# Define the primary theme color for the site icon.
+# (usage may be expanded later)
+theme_color: "#18bc9c"
+
+# Uncomment to enable scrolling past page content.
+# Useful to ensure anchor links scroll to anchors at the bottom of the content.
+# sroll_past_content: 1
+
+# Uncomment when you have created the site's logo files.
+# logo_image: 1
+
+# Uncomment and set to the path of a banner image to display at the top of every page.
+# Maximum displayed width is 825px. Transparent PNG or GIF recommended.
+# Beginning slash (representing site-/repo-root) required.
+# banner_image: /assets/media/banner.png
+
+# Date format, http://shopify.github.io/liquid/filters/date/
+date_format: "%b %-d, %Y"
+
+# Uncomment and set to a Personal Access Token to enable the Search functionality.
+# See: https://github.com/settings/tokens
+# Any access token (with no scopes/privileges enabled) will do.
+# api_token: 0123456789abcdef
+api_endpoint: https://api.github.com
+
+# ============================== Stop Configuring ==============================
+
+# Post permalinks are always the title of the post
+permalink: /:title
+
+# Pages under _pages
+include: ['_pages']
+
+# Page permalinks are always the title of the page
+defaults:
+  - scope:
+      path: "_pages"
+      type: "pages"
+    values:
+      layout: page
+      menu: none
+      permalink: /:basename
+
+# Version numbers for dependencies.
+versions:
+ jquery: 3.4.1
+ bootstrap: 4.3.1
+ fontawesome: 5.10.1
+ bowser: 2.5.3
+ tocbot: 4.7.1
+ clipboard: 2.0.4
+ datatables: bs4/jszip-2.5.0/dt-1.10.18/b-1.5.6/b-colvis-1.5.6/b-html5-1.5.6/r-2.2.2
+ pdfmake: 0.1.36
+ mark: 8.11.1
+ octokitrest: 15.2.6
+ printthis: 0.1.5

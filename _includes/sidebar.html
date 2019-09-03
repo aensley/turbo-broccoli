@@ -1,0 +1,9 @@
+<div id="tocSidebar" class="sticky-top bg-light rounded p-3 mb-3 border">
+  <p class="text-center">
+    <a class="btn btn-outline-warning mx-1" href="{{ site.github.repository_url }}/edit/master/{{ page.path }}" title="Edit this page"><i class="fas fa-edit"></i></a>
+    <a class="btn btn-outline-info mx-1" href="mailto:?subject={{ site.title | uri_escape }}%20-%20{{page.title | uri_escape }}&amp;body={{ site.github.url }}{{ page.url }}" title="Email this page"><i class="fas fa-envelope"></i></a>
+    <button class="btn btn-outline-primary mx-1" data-clipboard-text="{{ site.github.url }}{{ page.url }}" title="Copy Link"><i class="fas fa-link"></i></button>
+  </p>
+  <h5><i class="fas fa-list mr-1"></i> Table of Contents</h5>
+  <div id="toc" class="nav flex-column"></div>
+</div>

@@ -1,0 +1,149 @@
+---
+permalink: /assets/css/style.css
+---
+
+@charset "utf-8";
+
+// Import partials.
+@import
+  "syntax-highlighting",
+  "anchor-links",
+  "search"
+;
+
+body {
+  font-size: 1rem;
+}
+
+@media only screen {
+  body {
+    padding-top: 85px;
+  }
+}
+
+@media only print {
+  // Force full-width content when printing
+  .content-col {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+    width: 100% !important;
+  }
+}
+
+// Responsive images
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+#logo {
+  margin-bottom: 2px;
+}
+
+main {
+  // Image spacing
+  img {
+    margin-top: .75em;
+    margin-bottom: .75em;
+  }
+
+  // Header spacing
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: 1em;
+  }
+
+  // Ordered List item spacing
+  ol li+li {
+    border-top: 1px solid #dddddd;
+    margin-top: .5em;
+    padding-top: .5em;
+  }
+  blockquote {
+    border-left: .25em solid #ecf0f1;
+    color: #6a737d;
+    padding: 0 1em;
+  }
+}
+
+// Allow the page to scroll past content
+// This helps with links to anchors near the bottom of the page.
+.page-spacer {
+  // 90vh = 90% of viewport height
+  // 171px = header and footer height
+  height: calc(90vh - 171px);
+}
+
+// Fixed width for Font Awesome icons
+.fa-fw {
+  display: inline-block;
+  margin-right: .333333em;
+  width: 1.25em;
+}
+
+// DataTables Tweaks
+.dt-buttons {
+  float: left;
+  margin-bottom: 6px;
+}
+
+.dataTables_info {
+  float: left;
+}
+
+.dataTables_filter {
+  padding-top: 16px;
+  label {
+    margin-bottom: 0;
+    input {
+      font-size: .875rem;
+    }
+  }
+}
+
+.dt-buttons .btn.dropdown-toggle::before {
+  margin-left: 0;
+  margin-right: .3em;
+}
+
+.dataTable tbody .fa-stack {
+  font-size: .75em;
+  margin-top: -.25em;
+  margin-bottom: -.5em;
+}
+
+.table th, .table td {
+  vertical-align: middle;
+}
+
+
+#tocSidebar {
+  // Hide until initialized. JS shows it after initialization.
+  display: none;
+  overflow: hidden;
+  top: 102px;
+}
+
+#toc ol {
+  list-style-type: none;
+  li {
+    padding-top: 10px;
+  }
+}
+
+.toc-link::before {
+  background-color: var(--light);
+}
+
+.is-active-link {
+  color: var(--info) !important;
+  &::before {
+    background-color: var(--info);
+  }
+}

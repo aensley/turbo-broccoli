@@ -1,0 +1,8 @@
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-{{ site.versions.jquery }}.min.js" crossorigin="anonymous"></script>
+<!-- Popper and Bootstrap -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/{{ site.versions.bootstrap }}/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+<!-- Bowser -->
+<script src="https://cdn.jsdelivr.net/npm/bowser@{{ site.versions.bowser }}/es5.min.js"></script>
+<!-- Custom Javascript -->
+<script defer src="{{ '/assets/js/app.js' | relative_url }}?{{site.time | date: '%s%N'}}"></script>

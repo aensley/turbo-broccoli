@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}" class="h-100">
+
+  {%- include head.html -%}
+
+  <body class="d-flex flex-column h-100">
+
+    {%- include header.html -%}
+
+    <div class="flex-shrink-0">
+      <div class="container py-4">
+        {%- if page.title -%}
+          <div class="row">
+            <header class="col pb-3">
+                <h1 class="page-heading">
+                  {%- if page.icon -%}
+                    <i class="{{ page.icon }} mr-2"></i>
+                  {%- endif -%}
+                  {{ page.title | escape }}
+                </h1>
+            </header>
+          </div>
+        {%- endif -%}
+        <div class="row">
+          {{ content }}
+        </div>
+      </div>
+    </div>
+
+    {%- include footer.html -%}
+
+  </body>
+
+</html>

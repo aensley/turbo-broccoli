@@ -1,0 +1,28 @@
+---
+layout: default
+---
+
+<div class="col-md-4 col-lg-3 order-md-last d-print-none">
+  {%- include sidebar.html -%}
+</div>
+<div class="col-md-8 col-lg-9 order-md-first content-col">
+  <main id="content" role="main" class="flex-shrink-0">
+    {%- if site.banner_image -%}<img src="{{ site.banner_image | relative_url }}?{{site.time | date: '%s%N'}}" />{%- endif -%}
+    <article class="post">
+      <div class="post-content">
+        {%- include anchor_headings.html html=content anchorClass="heading-anchor" -%}
+      </div>
+    </article>
+  </main>
+  <div class="d-print-none">
+    <hr/>
+    <p>
+      <a class="btn btn-outline-warning mx-1" href="{{ site.github.repository_url }}/edit/master/{{ page.path }}"><i class="fas fa-edit mr-1"></i> Edit this page</a>
+      <a class="btn btn-outline-info mx-1" href="mailto:?subject={{ site.title | uri_escape }}%20-%20{{page.title | uri_escape }}&amp;body={{ site.github.url }}{{ page.url }}" title="Share by Email">
+        <i class="fas fa-envelope mr-1"></i> Email this page
+      </a>
+      <button class="btn btn-outline-primary" data-clipboard-text="{{ site.github.url }}{{ page.url }}"><i class="fas fa-link mr-1"></i> Copy Link</button>
+    </p>
+  </div>
+  {%- if site.sroll_past_content -%}<div class="page-spacer d-print-none"></div>{%- endif -%}
+</div>
