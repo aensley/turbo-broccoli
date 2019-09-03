@@ -11,5 +11,5 @@ script: script/cibuild
 env:
   matrix:
     - JEKYLL_VERSION="~> 3.5"
-    - JEKYLL_VERSION="~> 3.8.0"
-    - JEKYLL_VERSION=">= 4.0.0.pre.alpha1"
+    - JEKYLL_VERSION="~> 3.8"
+    - JEKYLL_VERSION="~> 4.0"
