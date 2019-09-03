@@ -543,9 +543,17 @@ function initToc () {
  */
 function showTooltip (target, message) {
   let $target = $(target)
+  let originalTitle = $target.attr('title')
+  $target.attr('title', message)
   $target.on('shown.bs.tooltip', function () {
     // Hide after 1 second
-    setTimeout(function () { $target.tooltip('hide') }, 1000)
+    setTimeout(
+      function () {
+        $target.attr('title', originalTitle)
+        $target.tooltip('hide')
+      },
+      1000
+    )
   }).tooltip({
     placement: 'bottom',
     title: message,
