@@ -2,7 +2,7 @@
 title: Turbo Broccoli
 author: aensley
 description: > # the ">" means to ignore newlines until "footer:"
-  A Jekyll theme for GitHub Pages sites. It's fast, and it's good for you.
+  A Jekyll theme for GitHub Pages. It's fast, and it's good for you.
 footer: >
   Footer goes here.
 show_excerpts: false # set to true to show excerpts on the homepage
