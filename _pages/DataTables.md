@@ -1,6 +1,7 @@
 ---
 title: DataTables
 icon: fas fa-table
+menu: Features
 order: 3
 ---
 
