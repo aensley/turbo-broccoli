@@ -51,28 +51,28 @@ _**Note:** There must be nothing between the `<script>` element and the table fo
 ```markdown
 <script type="text/x-datatable"></script>
 
-| Item ID | Item Name | Price |
-| ------- | --------- | ----: |
-| 1 | Tire | $45.00 |
-| 2 | Engine | $2,000.00 |
-| 3 | Seat | $300.00 |
-| 4 | Door | $300.00 |
-| 5 | Transmission | $1,500.00 |
-| 6 | Radio | $45.00 |
+| Item ID | Item Name | Price | Quantity |
+| ------- | --------- | ----: | :------: |
+| 1 | Tire | $45.00 | 4 |
+| 2 | Engine | $2,000.00 | 1 |
+| 3 | Seat | $300.00 | 2 |
+| 4 | Door | $300.00 | 2 |
+| 5 | Transmission | $1,500.00 | 1 |
+| 6 | Radio | $45.00 | 1 |
 ```
 
 This will render as:
 
 <script type="text/x-datatable"></script>
 
-| Item ID | Item Name | Price |
-| ------- | --------- | ----: |
-| 1 | Tire | $45.00 |
-| 2 | Engine | $2,000.00 |
-| 3 | Seat | $300.00 |
-| 4 | Door | $300.00 |
-| 5 | Transmission | $1,500.00 |
-| 6 | Radio | $45.00 |
+| Item ID | Item Name | Price | Quantity |
+| ------- | --------- | ----: | :------: |
+| 1 | Tire | $45.00 | 4 |
+| 2 | Engine | $2,000.00 | 1 |
+| 3 | Seat | $300.00 | 2 |
+| 4 | Door | $300.00 | 2 |
+| 5 | Transmission | $1,500.00 | 1 |
+| 6 | Radio | $45.00 | 1 |
 
 
 ### Advanced Usage
@@ -95,14 +95,14 @@ To have greater control over the table, you can specify an [options object](http
   }
 </script>
 
-| Item ID | Item Name | Price |
-| ------- | --------- | ----: |
-| 1 | Tire | $45.00 |
-| 2 | Engine | $2,000.00 |
-| 3 | Seat | $300.00 |
-| 4 | Door | $300.00 |
-| 5 | Transmission | $1,500.00 |
-| 6 | Radio | $45.00 |
+| Item ID | Item Name | Price | Quantity |
+| ------- | --------- | ----: | :------: |
+| 1 | Tire | $45.00 | 4 |
+| 2 | Engine | $2,000.00 | 1 |
+| 3 | Seat | $300.00 | 2 |
+| 4 | Door | $300.00 | 2 |
+| 5 | Transmission | $1,500.00 | 1 |
+| 6 | Radio | $45.00 | 1 |
 
 ```
 
@@ -117,11 +117,11 @@ This will render as:
   ]
 }</script>
 
-| Item ID | Item Name | Price |
-| ------- | --------- | ----: |
-| 1 | Tire | $45.00 |
-| 2 | Engine | $2,000.00 |
-| 3 | Seat | $300.00 |
-| 4 | Door | $300.00 |
-| 5 | Transmission | $1,500.00 |
-| 6 | Radio | $45.00 |
+| Item ID | Item Name | Price | Quantity |
+| ------- | --------- | ----: | :------: |
+| 1 | Tire | $45.00 | 4 |
+| 2 | Engine | $2,000.00 | 1 |
+| 3 | Seat | $300.00 | 2 |
+| 4 | Door | $300.00 | 2 |
+| 5 | Transmission | $1,500.00 | 1 |
+| 6 | Radio | $45.00 | 1 |
