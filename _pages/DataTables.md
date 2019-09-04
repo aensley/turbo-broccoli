@@ -90,7 +90,7 @@ To have greater control over the table, you can specify an [options object](http
     "columnDefs": [
       { "responsivePriority": 3, "targets": 0 },
       { "responsivePriority": 1, "targets": 1 },
-      { "responsivePriority": 2, "targets": 2 },
+      { "responsivePriority": 2, "targets": 2 }
     ]
   }
 </script>
@@ -113,7 +113,7 @@ This will render as:
   "columnDefs": [
     { "responsivePriority": 3, "targets": 0 },
     { "responsivePriority": 1, "targets": 1 },
-    { "responsivePriority": 2, "targets": 2 },
+    { "responsivePriority": 2, "targets": 2 }
   ]
 }</script>
 
