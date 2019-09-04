@@ -86,7 +86,7 @@ To have greater control over the table, you can specify an [options object](http
 ```markdown
 <script type="text/x-datatable">
   {
-    "order": [[ 2, "desc" ], [ 1, "asc" ], [ 0, "asc" ]],
+    "order": [[ 2, "desc" ], [ 1, "asc" ]],
     "columnDefs": [
       { "responsivePriority": 3, "targets": 0 },
       { "responsivePriority": 1, "targets": 1 },
@@ -110,7 +110,7 @@ To have greater control over the table, you can specify an [options object](http
 This will render as:
 
 <script type="text/x-datatable">{
-  "order": [[ 2, "desc" ], [ 1, "asc" ], [ 0, "asc" ]],
+  "order": [[ 2, "desc" ], [ 1, "asc" ]],
   "columnDefs": [
     { "responsivePriority": 3, "targets": 0 },
     { "responsivePriority": 1, "targets": 1 },
