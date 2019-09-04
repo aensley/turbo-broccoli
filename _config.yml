@@ -79,3 +79,12 @@ versions:
  mark: 8.11.1
  octokitrest: 15.2.6
  printthis: 0.1.5
+
+# Plugins
+plugins:
+ - jekyll-seo-tag # https://help.github.com/en/articles/search-engine-optimization-for-github-pages
+ - jekyll-sitemap # https://help.github.com/en/articles/sitemaps-for-github-pages
+ - jekyll-feed # https://help.github.com/en/articles/atom-rss-feeds-for-github-pages
+ - jekyll-mentions # https://help.github.com/en/articles/mentions-on-github-pages
+ - jekyll-redirect-from # https://help.github.com/en/articles/redirects-on-github-pages
+ - jemoji # https://help.github.com/en/articles/emoji-on-github-pages
