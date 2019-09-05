@@ -15,22 +15,21 @@ code {
 
 pre code {
   padding: 0;
+  color: var(--primary);
 }
 
-/*
 .highlighter-rouge {
   background: #f6f8fa;
 }
-*/
 
 .highlight {
-  /*background: #f6f8fa;*/
+  background: #f6f8fa;
   background: #fff;
   margin-bottom: 15px;
 
   .highlighter-rouge & {
     background: #eef;
-    /*background: #f6f8fa;*/
+    background: #f6f8fa;
   }
 
   .c     { color: #998; font-style: italic } // Comment
