@@ -1,5 +1,8 @@
 # Turbo Broccoli
 
+[![License](https://img.shields.io/github/license/aensley/turbo-broccoli)](LICENSE)
+[![Build Status](https://travis-ci.com/aensley/turbo-broccoli.svg?branch=master)](https://travis-ci.com/aensley/turbo-broccoli)
+
 A Jekyll theme for GitHub Pages. It's fast, and it's good for you.
 
 
