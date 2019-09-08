@@ -34,7 +34,7 @@ The features include:
 To create a DataTable:
 
 1. First create a regular [Markdown table](https://help.github.com/en/articles/organizing-information-with-tables).
-2. Then, precede the table with a custom `<script>` tag:
+1. Then, precede the table with a custom `<script>` tag:
 
    ```html
    <script type="text/x-datatable"></script>
