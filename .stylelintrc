@@ -1,2 +1,4 @@
 extends: stylelint-config-standard
-ignoreFiles: _sass/_syntax-highlighting.scss
+ignoreFiles:
+  - _sass/_syntax-highlighting.scss
+  - assets/**/*.scss
