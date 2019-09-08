@@ -10,9 +10,9 @@ $block-quote-border-left-color: #ecf0f1;
 
 // Import partials.
 @import
-'syntax-highlighting',
-'anchor-links',
-'search'
+  'syntax-highlighting',
+  'anchor-links',
+  'search'
 ;
 
 body {
@@ -44,8 +44,8 @@ img {
 main {
   // Image spacing
   img {
-    margin-bottom: .75em;
-    margin-top: .75em;
+    margin-bottom: 0.75em;
+    margin-top: 0.75em;
   }
 
   // Header spacing
@@ -60,15 +60,15 @@ main {
 
   // Ordered List item spacing
   ol {
-    li+li {
+    li + li {
       border-top: 1px solid $ol-top-border-color;
-      margin-top: .5em;
-      padding-top: .5em;
+      margin-top: 0.5em;
+      padding-top: 0.5em;
     }
   }
 
   blockquote {
-    border-left: .25em solid $block-quote-border-left-color;
+    border-left: 0.25em solid $block-quote-border-left-color;
     color: $block-quote-color;
     padding: 0 1em;
   }
@@ -85,23 +85,23 @@ main {
 // Fixed width for Font Awesome icons
 .fa-fw {
   display: inline-block;
-  margin-right: .333333em;
+  margin-right: 0.333333em;
   width: 1.25em;
 }
 
 // DataTables Tweaks
-.dataTables_info { // sass-lint:disable-line class-name-format
+.dataTables_info {
   float: left;
 }
 
-.dataTables_filter { // sass-lint:disable-line class-name-format
+.dataTables_filter {
   padding-top: 16px;
 
   label {
     margin-bottom: 0;
 
     input {
-      font-size: .875rem;
+      font-size: 0.875rem;
     }
   }
 }
@@ -113,17 +113,17 @@ main {
   .dropdown-toggle {
     &::before {
       margin-left: 0;
-      margin-right: .3em;
+      margin-right: 0.3em;
     }
   }
 }
 
-.dataTable { // sass-lint:disable-line class-name-format
+.dataTable {
   tbody {
     .fa-stack {
-      font-size: .75em;
-      margin-bottom: -.5em;
-      margin-top: -.25em;
+      font-size: 0.75em;
+      margin-bottom: -0.5em;
+      margin-top: -0.25em;
     }
   }
 }
@@ -134,7 +134,6 @@ main {
     vertical-align: middle;
   }
 }
-
 
 .toc-sidebar {
   // Hide until initialized. JS shows it after initialization.
