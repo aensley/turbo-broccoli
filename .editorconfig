@@ -9,3 +9,12 @@ indent_size = 2
 indent_style = space
 insert_final_newline = true
 trim_trailing_whitespace = true
+
+# Don't include binary files.
+[*.{png,jpg,jpeg,gif,ico}]
+charset = unset
+end_of_line = unset
+indent_size = unset
+indent_style = unset
+insert_final_newline = false
+trim_trailing_whitespace = false
