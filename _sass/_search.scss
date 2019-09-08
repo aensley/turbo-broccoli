@@ -1,6 +1,5 @@
-$mark-background: rgba(255, 255, 140, .5);
+$mark-background: rgba(255, 255, 140, 0.5);
 $mark-color: #000;
-
 
 #search-results-modal-title { // sass-lint:disable-line no-ids
   font-weight: 700;
@@ -17,7 +16,6 @@ $mark-color: #000;
   ul {
     list-style-type: none;
     padding-left: 0;
-
   }
 
   li {
@@ -26,20 +24,20 @@ $mark-color: #000;
       margin-top: 1em;
     }
 
-    &:first-child {
-      h5 {
-        margin-top: 0;
+    ul {
+      font-size: 0.9em;
+      padding-left: 1em;
+
+      li + li {
+        border-top: 1px solid $ol-top-border-color;
+        margin-top: 0.5em;
+        padding-top: 0.5em;
       }
     }
 
-    ul {
-      font-size: .9em;
-      padding-left: 1em;
-
-      li+li {
-        border-top: 1px solid $ol-top-border-color;
-        margin-top: .5em;
-        padding-top: .5em;
+    &:first-child {
+      h5 {
+        margin-top: 0;
       }
     }
   }
@@ -50,5 +48,5 @@ mark {
   color: $mark-color;
   display: inline-block;
   font-weight: 700;
-  padding: 0 .3em;
+  padding: 0 0.3em;
 }

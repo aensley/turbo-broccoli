@@ -1,6 +1,0 @@
-files:
-  include:
-    - '_sass/*.scss'
-    - 'assets/css/style.scss'
-  ignore:
-    - '_sass/_syntax-highlighting.scss'
