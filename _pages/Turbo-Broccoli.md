@@ -7,11 +7,9 @@ permalink: /
 
 A Jekyll theme for GitHub Pages. It's fast, and it's good for you.
 
-
 ## Purpose
 
 Turbo Broccoli is a simple theme intended primarily for technical documentation or training. It is based on [Bootstrap 4](https://getbootstrap.com/), supporting [Bootswatch themes](https://bootswatch.com/) and [Font Awesome 5 icons](https://fontawesome.com/)
-
 
 ## Features
 
@@ -22,7 +20,7 @@ Features include:
 * [DataTables support](DataTables)
 * Simple [Video embeds](Videos)
 
-Additional features: 
+Additional features:
 
 * Responsive layout thanks to [Bootstrap 4](https://getbootstrap.com/)
 * [Font Awesome 5 icons](https://fontawesome.com/)
@@ -33,7 +31,6 @@ Additional features:
 * Print view
 * Custom navbar Links
 * Buttons to encourage page editing and sharing
-
 
 ## Usage
 

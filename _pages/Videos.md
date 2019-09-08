@@ -9,7 +9,6 @@ order: 10
 
 Videos can be embedded simply by linking to them with the link text the same as the link URL.
 
-
 ### Example
 
 Take the following Markdown:
@@ -22,14 +21,11 @@ This will render as:
 
 [https://youtu.be/w3jLJU7DT5E](https://youtu.be/w3jLJU7DT5E)
 
-
 ## Video Services
-
 
 ### YouTube
 
 Currently only YouTube URLs are supported. Any standard format of YouTube URL should work.
-
 
 #### Examples
 

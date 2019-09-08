@@ -13,7 +13,6 @@ When you find a theme you like, enable it by changing the `bootswatch_theme` set
 
 The value of `bootswatch_theme` must be all lowercase.
 
-
 ### Examples
 
 ```yaml

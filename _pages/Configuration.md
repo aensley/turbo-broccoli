@@ -13,7 +13,6 @@ title: Turbo Broccoli
 
 Sets the title of the site. This title is displayed in the browser tab and the footer of the page.
 
-
 ## Author
 
 ```yaml
@@ -21,7 +20,6 @@ author: aensley
 ```
 
 Declares the author of the page. Used in the SEO meta tags in the HTML `<head>` section.
-
 
 ## Description
 
@@ -32,7 +30,6 @@ description: >
 
 Sets the description of the site. This is displayed in the footer.
 
-
 ## Footer
 
 ```yaml
@@ -42,7 +39,6 @@ footer: >
 
 Sets the footer content.
 
-
 ## Menus
 
 ```yaml
@@ -51,7 +47,6 @@ menus:
 ```
 
 Sets the menus available in the header navbar.
-
 
 ## Header Links
 
@@ -67,7 +62,6 @@ header_links:
 
 Custom header links displayed on the right side of the header navbar next to Search.
 
-
 ## Bootswatch Theme
 
 ```yaml
@@ -75,7 +69,6 @@ bootswatch_theme: materia
 ```
 
 Sets the Bootswatch Theme of the site. See the [Themes page](Themes) for available options.
-
 
 ## Theme Color
 
@@ -85,7 +78,6 @@ theme_color: "#18bc9c"
 
 Sets the primary color used in the site icon.
 
-
 ## Logo Image
 
 ```yaml
@@ -93,7 +85,6 @@ logo_image: 1
 ```
 
 Set/uncomment this when you have created the site's logo files.
-
 
 ## Banner Image
 
@@ -107,7 +98,6 @@ Maximum displayed width is `825px`. Transparent PNG or GIF recommended.
 
 The beginning slash (representing site-/repo-root) is required.
 
-
 ## Date Format
 
 ```yaml
@@ -116,7 +106,6 @@ date_format: "%b %-d, %Y"
 
 Date format. See: [http://shopify.github.io/liquid/filters/date/](http://shopify.github.io/liquid/filters/date/)
 
-
 ## Scroll Past Content
 
 ```yaml
@@ -124,7 +113,6 @@ sroll_past_content: 1
 ```
 
 Set/uncomment this to enable scrolling past page content. This is useful to ensure anchor links scroll to anchors at the bottom of the content.
-
 
 ## Search API
 

@@ -6,11 +6,9 @@
 
 A Jekyll theme for GitHub Pages. It's fast, and it's good for you.
 
-
 ## Purpose
 
 Turbo Broccoli is a simple theme intended primarily for technical documentation or training. It is based on [Bootstrap 4](https://getbootstrap.com/), supporting [Bootswatch themes](https://bootswatch.com/) and [Font Awesome 5 icons](https://fontawesome.com/)
-
 
 ## Features
 
@@ -30,26 +28,22 @@ Features include:
 * Custom navbar Links
 * Buttons to encourage page editing and sharing
 
-
 ### Favicon
 
 To create an icon for your site:
 
-1. Upload your square, transparent high-quality logo file to: https://realfavicongenerator.net/
+1. Upload your square, transparent high-quality logo file to: [realfavicongenerator.net](https://realfavicongenerator.net/)
 2. When you have created and downloaded your complete icon package, place its contents in the directory: `/assets/icon/`
 3. Set the site's **theme_color** in `_config.yml` to the same color value used on the Favicon Generator.
 4. Set the site's **logo_image** in `_config.yml` to `1`.
-
 
 ### Page Structure
 
 Each page is intended to be stored directly under the `_pages` directory. It must be a MarkDown (`.md`) file.
 
-
 #### Front Matter
 
 Each page must have a [Jekyll Front Matter section](https://jekyllrb.com/docs/front-matter/).
-
 
 ##### Example
 
@@ -62,7 +56,6 @@ order: 1
 ---
 ```
 
-
 ##### Variables
 
 | Variable | Required | Description |
@@ -73,7 +66,6 @@ order: 1
 | `menu` | no | Must be one of the `menus` in [\_config.yml](https://github.com/aensley/turbo-broccoli/blob/master/_config.yml) if specified. If not specified, it will be treated as a top-level page in the main navbar. |
 | `exclude_from_header` | no | Set to `true` if you want to exclude the page from the main navbar. This should almost never be set. |
 | `permalink` | no | Set this to override the default permalink of `/:basename`. This should almost never be set. |
-
 
 #### Headings
 
@@ -88,7 +80,6 @@ Each page should be well-structured with nested levels of headings (h2 - h6). Th
 ```
 
 The `# h1` heading is reserved for the page title only and must not be used in page markdown files.
-
 
 #### MarkDown
 
