@@ -33,9 +33,9 @@ Features include:
 To create an icon for your site:
 
 1. Upload your square, transparent high-quality logo file to: [realfavicongenerator.net](https://realfavicongenerator.net/)
-2. When you have created and downloaded your complete icon package, place its contents in the directory: `/assets/icon/`
-3. Set the site's **theme_color** in `_config.yml` to the same color value used on the Favicon Generator.
-4. Set the site's **logo_image** in `_config.yml` to `1`.
+1. When you have created and downloaded your complete icon package, place its contents in the directory: `/assets/icon/`
+1. Set the site's **theme_color** in `_config.yml` to the same color value used on the Favicon Generator.
+1. Set the site's **logo_image** in `_config.yml` to `1`.
 
 ### Page Structure
 

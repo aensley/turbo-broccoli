@@ -8,7 +8,7 @@ The following is a set of guidelines for contributing to this project.
 
 This project and everyone participating in it is governed by the [Code of Conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code.
 
-## How Can I Contribute?
+## How To Contribute
 
 ### Suggestions
 
@@ -18,7 +18,7 @@ Before submitting a suggestion, please **Perform a [cursory search](https://gith
 
 When you are creating a suggestion, please [include as many details as possible](#how-do-i-submit-a-good-enhancement-suggestion) and fill in the template.
 
-#### How Do I Submit A (Good) Enhancement Suggestion?
+#### How To Submit A (Good) Enhancement Suggestion
 
 Suggestions are tracked as [GitHub issues](https://guides.github.com/features/issues/). [Create an issue](https://github.com/aensley/turbo-broccoli/issues/new?template=suggestion.md&labels=suggestion&projects=aensley/turbo-broccoli/1) and provide the following information by filling in the template:
 
@@ -31,9 +31,9 @@ Suggestions are tracked as [GitHub issues](https://guides.github.com/features/is
 
 The process described here has several goals:
 
-- Maintain quality
-- Fix problems that are important to users
-- Enable a sustainable system for maintainers to review contributions
+* Maintain quality
+* Fix problems that are important to users
+* Enable a sustainable system for maintainers to review contributions
 
 Please follow these steps to have your contribution considered by the project's maintainers:
 
@@ -108,22 +108,22 @@ Use StandardJS formatting for all custom JavaScript.
 * Reference issues and pull requests liberally after the first line
 * When only changing documentation, include `[ci skip]` in the commit title
 * Consider starting the commit message with an applicable emoji:
-    * :art: `:art:` when improving the format/structure of the code
-    * :racehorse: `:racehorse:` when improving performance
-    * :non-potable_water: `:non-potable_water:` when plugging memory leaks
-    * :memo: `:memo:` when writing docs
-    * :penguin: `:penguin:` when fixing something on Linux
-    * :apple: `:apple:` when fixing something on macOS
-    * :checkered_flag: `:checkered_flag:` when fixing something on Windows
-    * :heavy_plus_sign: `:heavy_plus_sign:` when adding a feature or enhancement
-    * :bug: `:bug:` when fixing a bug
-    * :fire: `:fire:` when removing code or files
-    * :green_heart: `:green_heart:` when fixing the CI build
-    * :white_check_mark: `:white_check_mark:` when adding tests
-    * :lock: `:lock:` when dealing with security
-    * :arrow_up: `:arrow_up:` when upgrading dependencies
-    * :arrow_down: `:arrow_down:` when downgrading dependencies
-    * :shirt: `:shirt:` when removing linter warnings
+  * :art: `:art:` when improving the format/structure of the code
+  * :racehorse: `:racehorse:` when improving performance
+  * :non-potable_water: `:non-potable_water:` when plugging memory leaks
+  * :memo: `:memo:` when writing docs
+  * :penguin: `:penguin:` when fixing something on Linux
+  * :apple: `:apple:` when fixing something on macOS
+  * :checkered_flag: `:checkered_flag:` when fixing something on Windows
+  * :heavy_plus_sign: `:heavy_plus_sign:` when adding a feature or enhancement
+  * :bug: `:bug:` when fixing a bug
+  * :fire: `:fire:` when removing code or files
+  * :green_heart: `:green_heart:` when fixing the CI build
+  * :white_check_mark: `:white_check_mark:` when adding tests
+  * :lock: `:lock:` when dealing with security
+  * :arrow_up: `:arrow_up:` when upgrading dependencies
+  * :arrow_down: `:arrow_down:` when downgrading dependencies
+  * :shirt: `:shirt:` when removing linter warnings
 
 ## Additional Notes
 
