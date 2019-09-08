@@ -3,6 +3,9 @@
 [![License](https://img.shields.io/github/license/aensley/turbo-broccoli)](LICENSE)
 [![Build Status](https://travis-ci.com/aensley/turbo-broccoli.svg?branch=master)](https://travis-ci.com/aensley/turbo-broccoli)
 [![Maintainability](https://api.codeclimate.com/v1/badges/a0ae0b1e563a50f4fa09/maintainability)](https://codeclimate.com/github/aensley/turbo-broccoli/maintainability)
+[![Stylelint Standard](https://img.shields.io/badge/stylelint-standard-brightgreen)](https://github.com/stylelint/stylelint-config-standard)
+[![Markdownlint Standard](https://img.shields.io/badge/markdownlint-standard-brightgreen)](https://github.com/markdownlint/markdownlint)
+[![EditorConfig](https://img.shields.io/badge/-EditorConfig-blue)](.editorconfig)
 
 A Jekyll theme for GitHub Pages. It's fast, and it's good for you.
 
