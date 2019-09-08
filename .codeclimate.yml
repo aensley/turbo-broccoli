@@ -1,0 +1,10 @@
+plugins:
+  markdownlint:
+    enabled: true
+    checks:
+      MD002:
+        enabled: false
+  stylelint:
+    enabled: true
+  editorconfig:
+    enabled: true
