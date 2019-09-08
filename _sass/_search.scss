@@ -1,29 +1,43 @@
-#search-results-modal-title {
+$mark-background: rgba(255, 255, 140, .5);
+$mark-color: #000;
+
+
+#search-results-modal-title { // sass-lint:disable-line no-ids
   font-weight: 700;
 }
 
-#search-terms {
+.search-terms {
   font-weight: 400;
   word-break: break-all;
 }
 
-#search-results-list {
+.search-results-list {
   text-align: left;
+
   ul {
     list-style-type: none;
     padding-left: 0;
-    li h5 {
+
+  }
+
+  li {
+    h5 {
       font-weight: 700;
       margin-top: 1em;
     }
-    li:first-child h5 {
-      margin-top: 0;
+
+    &:first-child {
+      h5 {
+        margin-top: 0;
+      }
     }
-    li ul {
+
+    ul {
       font-size: .9em;
       padding-left: 1em;
+
       li+li {
-        border-top: 1px solid #dddddd;
+        border-top: 1px solid $ol-top-border-color;
         margin-top: .5em;
         padding-top: .5em;
       }
@@ -32,8 +46,8 @@
 }
 
 mark {
-  background: rgba(255,255,140,0.5);
-  color: #000;
+  background: $mark-background;
+  color: $mark-color;
   display: inline-block;
   font-weight: 700;
   padding: 0 .3em;

@@ -2,13 +2,17 @@
 permalink: /assets/css/style.css
 ---
 
-@charset "utf-8";
+@charset 'utf-8';
+
+$ol-top-border-color: #ddd;
+$block-quote-color: #6a737d;
+$block-quote-border-left-color: #ecf0f1;
 
 // Import partials.
 @import
-  "syntax-highlighting",
-  "anchor-links",
-  "search"
+'syntax-highlighting',
+'anchor-links',
+'search'
 ;
 
 body {
@@ -24,29 +28,24 @@ body {
 @media only print {
   // Force full-width content when printing
   .content-col {
-    -webkit-box-flex: 0;
-    -ms-flex: 0 0 100%;
     flex: 0 0 100%;
     max-width: 100%;
-    width: 100% !important;
+    min-width: 100%;
+    width: 100%;
   }
 }
 
 // Responsive images
 img {
-  max-width: 100%;
   height: auto;
-}
-
-#logo {
-  margin-bottom: 2px;
+  max-width: 100%;
 }
 
 main {
   // Image spacing
   img {
-    margin-top: .75em;
     margin-bottom: .75em;
+    margin-top: .75em;
   }
 
   // Header spacing
@@ -60,14 +59,17 @@ main {
   }
 
   // Ordered List item spacing
-  ol li+li {
-    border-top: 1px solid #dddddd;
-    margin-top: .5em;
-    padding-top: .5em;
+  ol {
+    li+li {
+      border-top: 1px solid $ol-top-border-color;
+      margin-top: .5em;
+      padding-top: .5em;
+    }
   }
+
   blockquote {
-    border-left: .25em solid #ecf0f1;
-    color: #6a737d;
+    border-left: .25em solid $block-quote-border-left-color;
+    color: $block-quote-color;
     padding: 0 1em;
   }
 }
@@ -88,61 +90,78 @@ main {
 }
 
 // DataTables Tweaks
-.dt-buttons {
-  float: left;
-  margin-bottom: 6px;
-}
-
-.dataTables_info {
+.dataTables_info { // sass-lint:disable-line class-name-format
   float: left;
 }
 
-.dataTables_filter {
+.dataTables_filter { // sass-lint:disable-line class-name-format
   padding-top: 16px;
+
   label {
     margin-bottom: 0;
+
     input {
       font-size: .875rem;
     }
   }
 }
 
-.dt-buttons .btn.dropdown-toggle::before {
-  margin-left: 0;
-  margin-right: .3em;
+.dt-buttons {
+  float: left;
+  margin-bottom: 6px;
+
+  .dropdown-toggle {
+    &::before {
+      margin-left: 0;
+      margin-right: .3em;
+    }
+  }
 }
 
-.dataTable tbody .fa-stack {
-  font-size: .75em;
-  margin-top: -.25em;
-  margin-bottom: -.5em;
+.dataTable { // sass-lint:disable-line class-name-format
+  tbody {
+    .fa-stack {
+      font-size: .75em;
+      margin-bottom: -.5em;
+      margin-top: -.25em;
+    }
+  }
 }
 
-.table th, .table td {
-  vertical-align: middle;
+.table {
+  th,
+  td {
+    vertical-align: middle;
+  }
 }
 
 
-#tocSidebar {
+.toc-sidebar {
   // Hide until initialized. JS shows it after initialization.
   display: none;
   overflow: hidden;
   top: 102px;
 }
 
-#toc ol {
-  list-style-type: none;
-  li {
-    padding-top: 10px;
+.toc {
+  ol {
+    list-style-type: none;
+
+    li {
+      padding-top: 10px;
+    }
   }
 }
 
-.toc-link::before {
-  background-color: var(--light);
+.toc-link {
+  &::before {
+    background-color: var(--light);
+  }
 }
 
 .is-active-link {
-  color: var(--info) !important;
+  color: var(--info);
+
   &::before {
     background-color: var(--info);
   }

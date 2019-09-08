@@ -6,20 +6,19 @@ h4,
 h5,
 h6 {
   // Fix anchor link spacing with sticky header
-  &[id]:before {
-    display: block;
-    content: " ";
-    margin-top: -102px;
-    height: 102px;
-    visibility: hidden;
+  &[id] {
+    &::before {
+      content: ' ';
+      display: block;
+      height: 102px;
+      margin-top: -102px;
+      visibility: hidden;
+    }
   }
 
   & > a {
     opacity: 0;
-    -webkit-transition: opacity 0.2s ease-in-out 0.1s;
-    -moz-transition: opacity 0.2s ease-in-out 0.1s;
-    -ms-transition: opacity 0.2s ease-in-out 0.1s;
-    transition: opacity 0.2s ease-in-out 0.1s;
+    transition: opacity .2s ease-in-out .1s;
   }
 
   &:hover > a {

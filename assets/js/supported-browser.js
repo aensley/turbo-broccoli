@@ -16,7 +16,7 @@ const DATATABLE_SELECTOR = DATATABLES_SCRIPT_SELECTOR + ' + table'
 const CLIPBOARD_SELECTOR = '[data-clipboard-text]'
 const IMAGE_VIEWER_SELECTOR = 'a img:only-child'
 const YOUTUBE_SELECTOR = 'a[href*="youtube.com"]:contains("youtube.com"),a[href*="youtu.be"]:contains("youtu.be")'
-const TOC_SELECTOR = '#toc'
+const TOC_SELECTOR = '.toc'
 const YOUTUBE_REGEX = /^.*((m\.)?youtu\.be\/|vi?\/|u\/\w\/|embed\/|\?vi?=|&vi?=)([^#&?'"/]*).*/
 
 /**
@@ -103,7 +103,7 @@ function initSearch () {
     .on('submit', function (e) {
       e.stopPropagation()
       e.preventDefault()
-      let searchString = $searchInput.val().trim()
+      const searchString = $searchInput.val().trim()
       if (!searchString) {
       // Don't search for nothing.
         return false
@@ -113,7 +113,7 @@ function initSearch () {
       return false
     })
   // See if the user came from a search result link.
-  let hashTerms = getSearchHash()
+  const hashTerms = getSearchHash()
   if (hashTerms) {
     // They did. Highlight their search terms.
     highlightSearchTerms(hashTerms)
@@ -126,7 +126,7 @@ function initSearch () {
  * @returns {String} The search terms from the hash, or an empty string if none.
  */
 function getSearchHash () {
-  let hash = window.location.hash
+  const hash = window.location.hash
   if (hash.length > 0 && hash.substring(0, 8) === '#search-') {
     return hash.substring(8)
   }
@@ -152,7 +152,7 @@ function highlightSearchTerms (searchString) {
           accuracy: 'exactly',
           ignoreJoiners: true,
           done: function () {
-            let $mark = $('mark[data-markjs]')
+            const $mark = $('mark[data-markjs]')
             if ($mark.length) {
               // Scroll to the first occurrence.
               window.scroll({
@@ -177,19 +177,19 @@ function initSearchResultModal () {
       '<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">' +
         '<div class="modal-content">' +
           '<div class="modal-header">' +
-            '<h5 class="modal-title" id="search-results-modal-title">Search Results: <span id="search-terms"></span></h5>' +
+            '<h5 class="modal-title" id="search-results-modal-title">Search Results: <span class="search-terms"></span></h5>' +
             '<button type="button" class="close" data-dismiss="modal" aria-label="Close">' +
               '<span aria-hidden="true">&times;</span>' +
             '</button>' +
           '</div>' +
-          '<div id="search-results-list" class="modal-body"></div>' +
+          '<div class="search-results-list" class="modal-body"></div>' +
         '</div>' +
       '</div>' +
     '</div>'
   )
   $('body').append($searchResultModal)
-  $searchTerms = $('#search-terms')
-  $searchResultsList = $('#search-results-list')
+  $searchTerms = $('.search-terms')
+  $searchResultsList = $('.search-results-list')
   $searchResultModal.modal({ focus: false, show: false })
 }
 
@@ -216,11 +216,11 @@ function displayResults (searchString, data) {
  * @returns {String} The unordered list as an HTML string.
  */
 function listResults (searchString, data, highlightMessage) {
-  let items = data.items; let list = '<ul>'; let max = 5; let resultsAdded = 0; let link; let localResults = false
+  const items = data.items; let list = '<ul>'; let max = 5; let resultsAdded = 0; let link; let localResults = false
   // Return a max of 5 results.
   for (let i = 0; i < items.length && i < max; i++) {
     // Set item = file name without the ".md" extension.
-    let item = items[i].name.substring(0, items[i].name.length - 3)
+    const item = items[i].name.substring(0, items[i].name.length - 3)
     if (item === BASENAME) {
       // Don't include the current page. Do inform the user there are local results.
       localResults = true
@@ -316,7 +316,7 @@ function addBreaks (subject) {
  */
 function searchFor404 () {
   if ($('#search-404').length) {
-    let lastPathContents = window.location.pathname.substring(window.location.pathname.lastIndexOf('/') + 1)
+    const lastPathContents = window.location.pathname.substring(window.location.pathname.lastIndexOf('/') + 1)
     searchGitHubCode(decodeURIComponent(lastPathContents).replace(/[^a-z0-9]/gi, ' '), function (searchString, data) {
       let numItems = data.items.length
       for (let i = 0; i < data.items.length; i++) {
@@ -328,7 +328,7 @@ function searchFor404 () {
       if (numItems) {
         $('#search-404').html(
           '<h3>Possible Matches</h3><p>These results may be close to what you were looking for.</p>' +
-          '<div id="search-results-list">' + listResults(searchString, data) + '</div>'
+          '<div class="search-results-list">' + listResults(searchString, data) + '</div>'
         )
       }
     })
@@ -356,8 +356,8 @@ function initImageViewerModal () {
   $('body').append($imageViewerModal)
   $imageViewerModalImage = $('#image-viewer-modal-image')
   $('#image-viewer-print-button').on('click', function () {
-    let $img = $imageViewerModalImage.find('img').first()
-    let src = $img.attr('src')
+    const $img = $imageViewerModalImage.find('img').first()
+    const src = $img.attr('src')
     if (src) {
       $imageViewerModalImage.printThis({
         printDelay: 333,
@@ -367,9 +367,9 @@ function initImageViewerModal () {
     }
   })
   $('#image-viewer-save-button').on('click', function () {
-    let src = $imageViewerModalImage.find('img').first().attr('src')
+    const src = $imageViewerModalImage.find('img').first().attr('src')
     if (src) {
-      let a = document.createElement('a')
+      const a = document.createElement('a')
       a.href = src
       a.download = src
       document.body.appendChild(a)
@@ -398,7 +398,7 @@ function openImageViewer (e) {
 function initImageViewer () {
   initImageViewerModal()
   $content.find(IMAGE_VIEWER_SELECTOR).each(function () {
-    let $this = $(this)
+    const $this = $(this)
     if (absoluteUrl($this.attr('src')) === absoluteUrl($this.parent().attr('href'))) {
       $this.parent().on('click', openImageViewer)
     }
@@ -424,10 +424,10 @@ function getYouTubeVideoId (url) {
  */
 function initYouTubeVideo () {
   $content.find(YOUTUBE_SELECTOR).each(function () {
-    let $this = $(this)
-    let href = $this.attr('href')
+    const $this = $(this)
+    const href = $this.attr('href')
     if (href === $this.text()) {
-      let videoId = getYouTubeVideoId(href)
+      const videoId = getYouTubeVideoId(href)
       $this.replaceWith(
         '<div class="embed-responsive embed-responsive-16by9">' +
           '<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/' +
@@ -445,7 +445,7 @@ function initYouTubeVideo () {
  * @param {String} href The relative path to convert.
  */
 function absoluteUrl (href) {
-  let link = document.createElement('a')
+  const link = document.createElement('a')
   link.href = href
   return link.href
 }
@@ -455,8 +455,8 @@ function absoluteUrl (href) {
  */
 function initDataTables () {
   $(DATATABLE_SELECTOR).each(function () {
-    let $this = $(this)
-    let options = {
+    const $this = $(this)
+    const options = {
       deferRender: true,
       dom: 'Bfrtip',
       buttons: [
@@ -467,9 +467,9 @@ function initDataTables () {
 
     // If someone came to this page from a search result,
     // filter the table based on the search terms.
-    let hashTerms = getSearchHash()
+    const hashTerms = getSearchHash()
     if (hashTerms) {
-      options.search = { 'search': hashTerms }
+      options.search = { search: hashTerms }
     }
 
     try {
@@ -499,7 +499,7 @@ function initToc () {
     collapseDepth: 0
   })
   $('.heading-anchor').text('#')
-  $('#tocSidebar').show()
+  $('.toc-sidebar').show()
 }
 
 /**
@@ -509,8 +509,8 @@ function initToc () {
  * @param {String}  message Tooltip text.
  */
 function showTooltip (target, message) {
-  let $target = $(target)
-  let originalTitle = $target.attr('title')
+  const $target = $(target)
+  const originalTitle = $target.attr('title')
   $target.attr('title', message)
   $target.on('shown.bs.tooltip', function () {
     // Hide after 1 second
@@ -532,7 +532,7 @@ function showTooltip (target, message) {
  * Initializes clipboard buttons.
  */
 function initClipboard () {
-  let clipboard = new ClipboardJS(CLIPBOARD_SELECTOR)
+  const clipboard = new ClipboardJS(CLIPBOARD_SELECTOR)
   clipboard.on('success', function (e) { showTooltip(e.trigger, 'Copied!') })
   clipboard.on('error', function (e) { showTooltip(e.trigger, 'Error') })
 }
