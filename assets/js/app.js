@@ -89,28 +89,6 @@ function getSearchHash () { // eslint-disable-line no-unused-vars
 }
 
 /**
- * Cache-honoring version of $.getScript()
- * Obtained from: https://api.jquery.com/jQuery.getScript/
- *
- * @param {String} url     The URL to load.
- * @param {Object} options AJAX options object.
- *
- * @return {jqXHR} The jQuery XMLHttpRequest object of the request.
- */
-$.cachedScript = function (url, options) {
-  // Allow user to set any option except for dataType, cache, and url
-  options = $.extend(options || {}, {
-    dataType: 'script',
-    cache: true,
-    url: url
-  })
-
-  // Use $.ajax() since it is more flexible than $.getScript
-  // Return the jqXHR object so we can chain callbacks
-  return $.ajax(options)
-}
-
-/**
  * Creates a single modal for repeated used by similar functions.
  *
  * @param {String} id      The basename to use in the modal's many related IDs.
@@ -148,6 +126,26 @@ function getModal (id, content, size, header, footer) { // eslint-disable-line n
 }
 
 /**
+ * Cache-honoring version of $.getScript()
+ * Obtained from: https://api.jquery.com/jQuery.getScript/
+ *
+ * @param {String} url     The URL to load.
+ * @param {Object} options AJAX options object.
+ *
+ * @return {jqXHR} The jQuery XMLHttpRequest object of the request.
+ */
+$.cachedScript = function (url, options) {
+  // Allow user to set any options except dataType, cache, and url
+  options = $.extend(options || {}, {
+    dataType: 'script',
+    cache: true,
+    url: url
+  })
+
+  return $.ajax(options)
+}
+
+/**
  * Cache-honoring External CSS Stylesheet loader.
  *
  * @param {String} url     The URL to load.
@@ -156,6 +154,7 @@ function getModal (id, content, size, header, footer) { // eslint-disable-line n
  * @return {jqXHR} The jQuery XMLHttpRequest object of the request.
  */
 $.cachedCss = function (url, options) {
+  // Allow user to set any options except cache and url
   options = $.extend(options || {}, {
     cache: true,
     url: url
@@ -175,7 +174,7 @@ $.cachedCss = function (url, options) {
  * @return {Promise} The jQuery Promise object representing all requests.
  */
 $.getMultiJsCss = function (arr) {
-  var _arr = $.map(arr, function (src) {
+  const _arr = $.map(arr, function (src) {
     if (src.search('.css') !== -1) {
       return $.cachedCss(src)
     } else {
@@ -221,10 +220,11 @@ function featureShouldLoad (feature) {
   )
 }
 
-/**
- * Conditionally loads features for the page.
- */
-function loadFeatures () {
+$(function () {
+  // DOM Ready
+  $('table').addClass('table table-striped table-bordered')
+  $content = $('#content')
+  // Conditionally load features on the page.
   for (const f in FEATURES) {
     const feature = FEATURES[f]
     if (featureShouldLoad(feature)) {
@@ -234,11 +234,4 @@ function loadFeatures () {
       feature.otherwise()
     }
   }
-}
-
-$(function () {
-  // DOM Ready
-  $('table').addClass('table table-striped table-bordered')
-  $content = $('#content')
-  loadFeatures()
 })
