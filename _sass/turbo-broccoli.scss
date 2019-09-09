@@ -148,16 +148,16 @@ main {
   }
 }
 
-.toc-link {
+a.toc-link {
   &::before {
     background-color: var(--light);
   }
-}
 
-.is-active-link {
-  color: var(--info);
+  &.is-active-link {
+    color: var(--info);
 
-  &::before {
-    background-color: var(--info);
+    &::before {
+      background-color: var(--info);
+    }
   }
 }
