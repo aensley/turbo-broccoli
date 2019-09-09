@@ -34,7 +34,7 @@ Additional features:
 
 ## Usage
 
-To enable the Turbo Broccoli theme in your GitHub Pages site, simple specify:
+To enable the Turbo Broccoli theme in your GitHub Pages site, simply specify:
 
 ```yaml
 remote_theme: aensley/turbo-broccoli
