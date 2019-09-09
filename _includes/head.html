@@ -3,9 +3,15 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   {%- include seo.html -%}
-  <!-- Bootswatch -->
-  <link id="bootswatchTheme" rel="stylesheet" crossorigin="anonymous"
-    href="https://stackpath.bootstrapcdn.com/bootswatch/{{ site.versions.bootstrap }}/{{ site.bootswatch_theme }}/bootstrap.min.css">
+  <!-- Bootstrap / Bootswatch -->
+  {%- if site.bootswatch_theme -%}
+    <link id="bootswatchTheme" rel="stylesheet" crossorigin="anonymous"
+      href="https://stackpath.bootstrapcdn.com/bootswatch/{{ site.versions.bootstrap }}/{{ site.bootswatch_theme }}/bootstrap.min.css">
+  {% else %}
+    <link rel="stylesheet" crossorigin="anonymous"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/{{ site.versions.bootstrap }}/css/bootstrap.min.css">
+    <link id="bootswatchTheme" rel="stylesheet" crossorigin="anonymous" href="">
+  {%- endif -%}
   <link id="customStyles" rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}?{{site.time | date: '%s%N'}}">
   {%- if site.logo_image -%}
     {%- include favicon.html -%}

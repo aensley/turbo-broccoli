@@ -21,7 +21,8 @@ header_links:
 
 # Bootswatch Theme
 # Available options: https://www.bootstrapcdn.com/bootswatch/
-bootswatch_theme: materia
+# If not set, default bootstrap styles will be used.
+# bootswatch_theme: materia
 
 # Define the primary theme color for the site icon.
 # (usage may be expanded later)
