@@ -1,4 +1,4 @@
-/* global $, $content, Octokit, PAGE_URL, API_TOKEN API_ENDPOINT, REPOSITORY, PAGE_NAME, getSearchHash */
+/* global $, $content, Octokit, PAGE_URL, API_TOKEN API_ENDPOINT, REPOSITORY, PAGE_NAME, getSearchHash, getModal */
 
 (function () {
   const DOT_POSITION = PAGE_NAME.lastIndexOf('.')
@@ -150,22 +150,12 @@
    * Initializes the modal used to display search results.
    */
   function initSearchResultModal () {
-    $searchResultModal = $(
-      '<div class="modal fade" id="search-results-modal" tabindex="-1" role="dialog" aria-labelledby="search-results-modal-title" aria-hidden="true">' +
-        '<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">' +
-          '<div class="modal-content">' +
-            '<div class="modal-header">' +
-              '<h5 class="modal-title" id="search-results-modal-title">Search Results: <span class="search-terms"></span></h5>' +
-              '<button type="button" class="close" data-dismiss="modal" aria-label="Close">' +
-                '<span aria-hidden="true">&times;</span>' +
-              '</button>' +
-            '</div>' +
-            '<div class="search-results-list" class="modal-body"></div>' +
-          '</div>' +
-        '</div>' +
-      '</div>'
+    $searchResultModal = getModal(
+      'search-results',
+      '<div class="search-results-list" class="modal-body"></div>',
+      null,
+      'Search Results: <span class="search-terms"></span>'
     )
-    $('body').append($searchResultModal)
     $searchTerms = $('.search-terms')
     $searchResultsList = $('.search-results-list')
     $searchResultModal.modal({ focus: false, show: false })

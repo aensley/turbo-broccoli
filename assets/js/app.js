@@ -111,6 +111,37 @@ $.cachedScript = function (url, options) {
 }
 
 /**
+ * Creates a single modal for repeated used by a similar functions.
+ *
+ * @param {String} id
+ */
+function getModal (id, content, size, header, footer) { // eslint-disable-line no-unused-vars
+  size = (size || '')
+  const $modal = $(
+    '<div class="modal fade" id="' + id + '-modal" tabindex="-1" role="dialog" aria-labelledby="' + id + '-modal-title" aria-hidden="true">' +
+      '<div class="modal-dialog ' + size + ' modal-dialog-centered modal-dialog-scrollable" role="document">' +
+        '<div class="modal-content">' +
+          (
+            header
+              ? '<div class="modal-header">' +
+                '<h5 class="modal-title" id="' + id + '-modal-title">' + header + '</h5>' +
+                '<button type="button" class="close" data-dismiss="modal" aria-label="Close">' +
+                  '<span aria-hidden="true">&times;</span>' +
+                '</button>' +
+              '</div>'
+              : ''
+          ) +
+          content +
+          (footer ? '<div class="modal-footer">' + footer + '</div>' : '') +
+        '</div>' +
+      '</div>' +
+    '</div>'
+  )
+  $('body').append($modal)
+  return $modal
+}
+
+/**
  * Cache-honoring External CSS Stylesheet loader.
  *
  * @param {String} url     The URL to load.

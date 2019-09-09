@@ -1,4 +1,4 @@
-/* global $, FEATURES, $content */
+/* global $, FEATURES, $content, getModal */
 
 (function () {
   let $imageViewerModal,
@@ -21,21 +21,17 @@
    * Initializes the modal used to display images.
    */
   function initImageViewerModal () {
-    $imageViewerModal = $(
-      '<div class="modal fade" id="image-viewer-modal" tabindex="-1" role="dialog" aria-labelledby="image-viewer-modal-title" aria-hidden="true">' +
-        '<div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable" role="document">' +
-          '<div class="modal-content">' +
-            '<div id="image-viewer-modal-image" class="modal-body text-center"></div>' +
-            '<div class="modal-footer">' +
-              '<button type="button" class="btn btn-primary" id="image-viewer-save-button"><i class="fas fa-save mr-1"></i> Save</button>' +
-              '<button type="button" class="btn btn-danger" id="image-viewer-print-button"><i class="fas fa-print mr-1"></i> Print</button>' +
-              '<button type="button" class="btn btn-secondary" data-dismiss="modal"><span aria-hidden="true" class="mr-1">&times;</span> Close</button>' +
-            '</div>' +
-          '</div>' +
-        '</div>' +
-      '</div>'
+    $imageViewerModal = getModal(
+      'image-viewer',
+      '<div id="image-viewer-modal-image" class="modal-body text-center"></div>',
+      'modal-xl',
+      null,
+      (
+        '<button type="button" class="btn btn-primary" id="image-viewer-save-button"><i class="fas fa-save mr-1"></i> Save</button>' +
+        '<button type="button" class="btn btn-danger" id="image-viewer-print-button"><i class="fas fa-print mr-1"></i> Print</button>' +
+        '<button type="button" class="btn btn-secondary" data-dismiss="modal"><span aria-hidden="true" class="mr-1">&times;</span> Close</button>'
+      )
     )
-    $('body').append($imageViewerModal)
     $imageViewerModalImage = $('#image-viewer-modal-image')
     $('#image-viewer-print-button').on('click', function () {
       const $img = $imageViewerModalImage.find('img').first()
