@@ -75,6 +75,20 @@ function testArrowFunction () {
 }
 
 /**
+ * Returns a search term in the location hash, if available.
+ *
+ * @returns {String} The search terms from the hash, or an empty string if none.
+ */
+function getSearchHash () { // eslint-disable-line no-unused-vars
+  const hash = window.location.hash
+  if (hash.length > 0 && hash.substring(0, 8) === '#search-') {
+    return hash.substring(8)
+  }
+
+  return ''
+}
+
+/**
  * Cache-honoring version of $.getScript()
  * Obtained from: https://api.jquery.com/jQuery.getScript/
  *

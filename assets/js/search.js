@@ -1,18 +1,4 @@
-/* global $, $content, Octokit, PAGE_URL, API_TOKEN API_ENDPOINT, REPOSITORY, PAGE_NAME */
-
-/**
- * Returns a search term in the location hash, if available.
- *
- * @returns {String} The search terms from the hash, or an empty string if none.
- */
-function getSearchHash () {
-  const hash = window.location.hash
-  if (hash.length > 0 && hash.substring(0, 8) === '#search-') {
-    return hash.substring(8)
-  }
-
-  return ''
-}
+/* global $, $content, Octokit, PAGE_URL, API_TOKEN API_ENDPOINT, REPOSITORY, PAGE_NAME, getSearchHash */
 
 (function () {
   const DOT_POSITION = PAGE_NAME.lastIndexOf('.')
