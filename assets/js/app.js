@@ -111,9 +111,15 @@ $.cachedScript = function (url, options) {
 }
 
 /**
- * Creates a single modal for repeated used by a similar functions.
+ * Creates a single modal for repeated used by similar functions.
  *
- * @param {String} id
+ * @param {String} id      The basename to use in the modal's many related IDs.
+ * @param {String} content The content of the modal.
+ * @param {String} size    The size class of the modal.
+ * @param {String} header  The header of the modal.
+ * @param {String} footer  The footer of the modal.
+ *
+ * @return {jQuery} The jQuery object representing the modal.
  */
 function getModal (id, content, size, header, footer) { // eslint-disable-line no-unused-vars
   size = (size || '')
@@ -185,12 +191,34 @@ $.getMultiJsCss = function (arr) {
 }
 
 /**
- * Loads a feature.
+ * Loads a single feature.
  *
- * @param {String} f The feature to load.
+ * @param {String} name    The name of the feature.
+ * @param {Object} feature The feature object.
  */
-function loadFeatureScript (f) {
-  $.cachedScript('assets/js/' + f + '.js?_=' + BUILD_NUMBER)
+function loadFeature (name, feature) {
+  const loadFeatureScript = function () { $.cachedScript('assets/js/' + name + '.js?_=' + BUILD_NUMBER) }
+  if (feature.external) {
+    // Load external scripts first.
+    $.getMultiJsCss(feature.external).done(loadFeatureScript)
+  } else {
+    // Load the feature directly.
+    loadFeatureScript()
+  }
+}
+
+/**
+ * Checks if the given feature should be loaded.
+ *
+ * @param {Object} feature The feature object.
+ *
+ * @returns {Boolean} True if the feature should be loaded. False if not.
+ */
+function featureShouldLoad (feature) {
+  return (
+    (!feature.test || feature.test()) && // If we have a test, does it pass?
+    (!feature.selector || $(feature.selector).length) // If we have a selector, is it found on the page?
+  )
 }
 
 /**
@@ -199,20 +227,8 @@ function loadFeatureScript (f) {
 function loadFeatures () {
   for (const f in FEATURES) {
     const feature = FEATURES[f]
-    if (
-      (!feature.test || feature.test()) && // If we have a test, does it pass?
-      (!feature.selector || $(feature.selector).length) // If we have a selector, is it found on the page?
-    ) {
-      if (feature.external) {
-        // Load external scripts first.
-        $.getMultiJsCss(feature.external).done(function () {
-          // Then load the feature.
-          loadFeatureScript(f)
-        })
-      } else {
-        // Load the feature directly.
-        loadFeatureScript(f)
-      }
+    if (featureShouldLoad(feature)) {
+      loadFeature(f, feature)
     } else if (feature.otherwise) {
       // Perform an alternative action.
       feature.otherwise()

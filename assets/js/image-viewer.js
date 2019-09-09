@@ -18,6 +18,32 @@
   }
 
   /**
+   * Handles the click event on the print button.
+   */
+  function printButtonClick () {
+    $imageViewerModalImage.printThis({
+      printDelay: 333,
+      removeScripts: true,
+      base: window.location.href.substring(0, window.location.href.lastIndexOf('/') + 1)
+    })
+  }
+
+  /**
+   * Handles the click event on the save button.
+   */
+  function saveButtonClick () {
+    const src = $imageViewerModalImage.find('img').first().attr('src')
+    if (src) {
+      const a = document.createElement('a')
+      a.href = src
+      a.download = src
+      document.body.appendChild(a)
+      a.click()
+      document.body.removeChild(a)
+    }
+  }
+
+  /**
    * Initializes the modal used to display images.
    */
   function initImageViewerModal () {
@@ -33,28 +59,8 @@
       )
     )
     $imageViewerModalImage = $('#image-viewer-modal-image')
-    $('#image-viewer-print-button').on('click', function () {
-      const $img = $imageViewerModalImage.find('img').first()
-      const src = $img.attr('src')
-      if (src) {
-        $imageViewerModalImage.printThis({
-          printDelay: 333,
-          removeScripts: true,
-          base: window.location.href.substring(0, window.location.href.lastIndexOf('/') + 1)
-        })
-      }
-    })
-    $('#image-viewer-save-button').on('click', function () {
-      const src = $imageViewerModalImage.find('img').first().attr('src')
-      if (src) {
-        const a = document.createElement('a')
-        a.href = src
-        a.download = src
-        document.body.appendChild(a)
-        a.click()
-        document.body.removeChild(a)
-      }
-    })
+    $('#image-viewer-print-button').on('click', printButtonClick)
+    $('#image-viewer-save-button').on('click', saveButtonClick)
     $imageViewerModal.modal({ focus: false, show: false })
   }
 
