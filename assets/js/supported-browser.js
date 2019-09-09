@@ -426,16 +426,14 @@ function initYouTubeVideo () {
   $content.find(YOUTUBE_SELECTOR).each(function () {
     const $this = $(this)
     const href = $this.attr('href')
-    if (href === $this.text()) {
-      const videoId = getYouTubeVideoId(href)
-      $this.replaceWith(
-        '<div class="embed-responsive embed-responsive-16by9">' +
-          '<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/' +
-          videoId +
-          '?modestbranding=1&iv_load_policy=3&rel=0&showinfo=0" allowfullscreen></iframe>' +
-        '</div>'
-      )
-    }
+    const videoId = getYouTubeVideoId(href)
+    $this.replaceWith(
+      '<div class="embed-responsive embed-responsive-16by9">' +
+        '<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/' +
+        videoId +
+        '?modestbranding=1&iv_load_policy=3&rel=0&showinfo=0" allowfullscreen></iframe>' +
+      '</div>'
+    )
   })
 }
 
