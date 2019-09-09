@@ -15,7 +15,7 @@ const DATATABLES_SCRIPT_SELECTOR = 'script[type="text/x-datatable"]'
 const DATATABLE_SELECTOR = DATATABLES_SCRIPT_SELECTOR + ' + table'
 const CLIPBOARD_SELECTOR = '[data-clipboard-text]'
 const IMAGE_VIEWER_SELECTOR = 'a img:only-child'
-const YOUTUBE_SELECTOR = 'a[href*="youtube.com"]:contains("youtube.com"),a[href*="youtu.be"]:contains("youtu.be")'
+const YOUTUBE_SELECTOR = 'a[href*="youtu"]:contains("youtube-video")'
 const TOC_SELECTOR = '.toc'
 const YOUTUBE_REGEX = /^.*((m\.)?youtu\.be\/|vi?\/|u\/\w\/|embed\/|\?vi?=|&vi?=)([^#&?'"/]*).*/
 

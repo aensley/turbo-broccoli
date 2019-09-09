@@ -7,19 +7,19 @@ order: 10
 
 ## Video Embeds
 
-Videos can be embedded simply by linking to them with the link text the same as the link URL.
+Videos can be embedded simply by linking to them with the link text set to `youtube-video`.
 
 ### Example
 
 Take the following Markdown:
 
 ```markdown
-[https://youtu.be/w3jLJU7DT5E](https://youtu.be/w3jLJU7DT5E)
+[youtube-video](https://youtu.be/w3jLJU7DT5E)
 ```
 
 This will render as:
 
-[https://youtu.be/w3jLJU7DT5E](https://youtu.be/w3jLJU7DT5E)
+[youtube-video](https://youtu.be/w3jLJU7DT5E)
 
 ## Video Services
 
