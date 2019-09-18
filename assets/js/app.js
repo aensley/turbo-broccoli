@@ -4,6 +4,9 @@ let browserWarned = false
 let $content // eslint-disable-line no-unused-vars
 const DATATABLES_SCRIPT_SELECTOR = 'script[type="text/x-datatable"]'
 const FEATURES = {
+  accordion: {
+    selector: '.createContentAccordion'
+  },
   clipboard: {
     selector: '[data-clipboard-text]',
     external: ['https://cdn.jsdelivr.net/npm/clipboard@' + VERSIONS.clipboard + '/dist/clipboard.min.js']
