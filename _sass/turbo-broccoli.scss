@@ -161,3 +161,12 @@ a.toc-link {
     }
   }
 }
+
+// No top margin for headers inside of cards.
+.card-body {
+  h2 {
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}
